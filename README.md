@@ -61,5 +61,3 @@ Projekt mi pomáhá rozvíjet dovednosti využitelné i mimo železnici: práci 
 ## Mapová data
 
 Mapová data © přispěvatelé [OpenStreetMap](https://www.openstreetmap.org/copyright). Při distribuci odvozených dat je potřeba zohlednit podmínky jejich zdroje.
-
-Mapová data © přispěvatelé [OpenStreetMap](https://www.openstreetmap.org/copyright). Při distribuci odvozených dat je potřeba zohlednit podmínky jejich zdroje.
