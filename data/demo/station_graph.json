@@ -1,0 +1,16 @@
+{
+  "stations": [
+    {
+      "name": "Demo Západ",
+      "rail_node": 0
+    },
+    {
+      "name": "Demo Střed",
+      "rail_node": 1
+    },
+    {
+      "name": "Demo Východ",
+      "rail_node": 2
+    }
+  ]
+}
