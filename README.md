@@ -6,6 +6,12 @@ Projekt vychází z mého koníčku projíždění železničních tratí. Půvo
 
 **Stav: projekt v aktivním vývoji.** Vyhledávání tras a výpočty závisejí na kvalitě a propojení použité železniční sítě.
 
+## Ukázka vyhledávání trasy
+
+Ukázkový výpočet mezi Prahou hlavním nádražím a Břeclaví přes čtyři průjezdní stanice na skutečné železniční síti.
+
+![Ukázkový výpočet trasy Praha–Břeclav s průjezdními stanicemi](docs/images/ukazka-trasy.jpg)
+
 ## Přihlášení do aplikace
 
 <img src="docs/images/prihlaseni.jpg" alt="Prázdná přihlašovací obrazovka aplikace Moje železnice" width="325">
