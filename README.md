@@ -34,6 +34,8 @@ Otevři http://127.0.0.1:8000, zaregistruj vlastní zkušební účet a vyhledej
 
 Mapový podklad a Leaflet se načítají z internetu. Směrování a evidence používají místní data. Jde o lokální vývojovou ukázku; konfigurace dosud není připravená pro veřejný provoz.
 
+Pro použití skutečné sítě nastav cesty ke svým souborům podle [návodu k železničním datům](docs/DATA.md#vlastní-železniční-síť).
+
 ## Kontrola funkčnosti
 
 ```bash

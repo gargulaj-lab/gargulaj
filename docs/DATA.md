@@ -6,17 +6,21 @@ Výchozí konfigurace používá tři smyšlené stanice Demo Západ, Demo Stře
 
 ## Vlastní železniční síť
 
-V nahraném projektu nebyly soubory `rail_graph.json` a `station_graph.json`. Původní aplikace je četla z `C:\OSM\HRANICE`. Úplnou síť proto nelze z tohoto repozitáře reprodukovat bez dalších podkladů. Přiložené původní GeoJSON soubory samy o sobě nenahrazují směrovací graf.
+Aplikace umí načíst dodané soubory `rail_graph.json` a `station_graph.json` z místního disku. Pro zobrazení sítě použij složku `static` z původního archivu projektu, která obsahuje `railway_network_multi.geojson`. Úplné datové soubory se uchovávají odděleně od zdrojového kódu.
 
-Pro vlastní data nastav před spuštěním všechny tři proměnné:
+Ve Windows PowerShell nastav cesty podle skutečného umístění souborů a spusť aplikaci ze složky repozitáře. Pro skutečnou síť použij samostatnou databázi jízd.
 
-| Proměnná | Obsah |
-| --- | --- |
-| RAIL_GRAPH_FILE | Absolutní cesta k rail_graph.json |
-| STATION_GRAPH_FILE | Absolutní cesta ke station_graph.json |
-| RAIL_STATIC_DIR | Absolutní cesta ke složce s odpovídajícím railway_network_multi.geojson |
+```powershell
+$env:RAIL_GRAPH_FILE = 'C:\OSM\HRANICE\rail_graph.json'
+$env:STATION_GRAPH_FILE = 'C:\OSM\HRANICE\station_graph.json'
+$env:RAIL_STATIC_DIR = 'C:\OSM\MOJE_ZELEZNICE\static'
+$env:DATABASE_FILE = Join-Path (Get-Location) 'data\real-network.db'
+python -m uvicorn app.main:app --reload --host 127.0.0.1
+```
 
-Na Windows PowerShell použij například `$env:RAIL_GRAPH_FILE = 'C:\OSM\HRANICE\rail_graph.json'`; obdobně nastav zbývající dvě proměnné. V shellu bash použij `export RAIL_GRAPH_FILE=/absolutni/cesta/rail_graph.json`.
+V Linuxu a macOS nastav stejné proměnné příkazem `export` s odpovídajícími místními cestami.
+
+Směrovací modul načetl z dodaných souborů 563 059 uzlů, 572 389 hran a 2 782 záznamů stanic. Výpočet vrátil 42,919 km pro Praha hlavní nádraží → Beroun a 74,247 km pro Praha Masarykovo nádraží → Kolín přes Praha-Vysočany a Nymburk hlavní nádraží. Hodnoty odpovídají snímku historie jízd. Kontrola se týkala směrování na těchto dvou trasách.
 
 ## Formát
 
