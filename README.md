@@ -6,6 +6,10 @@ Projekt vychází z mého koníčku projíždění železničních tratí. Půvo
 
 **Stav: projekt v aktivním vývoji.** Vyhledávání tras a výpočty závisejí na kvalitě a propojení použité železniční sítě.
 
+## Přihlášení do aplikace
+
+<img src="docs/images/prihlaseni.jpg" alt="Prázdná přihlašovací obrazovka aplikace Moje železnice" width="325">
+
 ## Vyzkoušení lokálně
 
 Repozitář obsahuje zdrojový kód a malou **syntetickou síť**, která umožňuje vyzkoušet aplikaci bez původních dat. Stanice Demo Západ, Demo Střed a Demo Východ, jejich geometrie i vzdálenosti jsou smyšlené. Úplná železniční síť není součástí této ukázky.
