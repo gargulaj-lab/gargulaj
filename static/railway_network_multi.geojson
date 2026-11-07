@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "synthetic-demo"
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              15.2,
+              49.94
+            ],
+            [
+              15.22,
+              49.95
+            ],
+            [
+              15.24,
+              49.94
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

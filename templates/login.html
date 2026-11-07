@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moje železnice – Přihlášení</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f3f5f7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            margin: 20px;
+            padding: 40px;
+
+            background: white;
+            border-radius: 16px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.10);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 8px;
+            margin-bottom: 32px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            margin-bottom: 20px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 9px;
+
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+
+            border: none;
+            border-radius: 9px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .register {
+            margin-top: 25px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .register a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 500px) {
+
+            body {
+                align-items: flex-start;
+            }
+
+            .login-card {
+                margin: 30px 15px;
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+
+        <div class="logo">🚆</div>
+
+        <h1>Moje železnice</h1>
+
+        <div class="subtitle">
+            Tvoje jízdy. Tvoje mapa. Tvoje kilometry.
+        </div>
+	{% if registered %}
+<div style="
+    background: #dcfce7;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+    color: #166534;
+">
+    Účet byl vytvořen. Teď se můžeš přihlásit.
+</div>
+{% endif %}
+
+{% if error %}
+<div style="
+    background: #fee2e2;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+    color: #991b1b;
+">
+    {{ error }}
+</div>
+{% endif %}
+        <form method="post" action="/login">
+
+            <label for="email">E-mail</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="např. pepa@email.cz"
+                autocomplete="email"
+                required
+            >
+
+            <label for="password">Heslo</label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Zadej heslo"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">
+                Přihlásit se
+            </button>
+
+        </form>
+
+        <div class="register">
+            Ještě nemáš účet?
+            <a href="/register">Vytvořit účet</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
